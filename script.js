@@ -1,7 +1,6 @@
 let elements = ['rock', 'paper', 'scissors'];
 
 function getComputerChoice() {
-    // get random choice for computer
     return elements[Math.floor(Math.random() * elements.length)];
 }
 
@@ -21,10 +20,8 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection === 'paper' && computerSelection === 'rock') ||
         (playerSelection === 'scissors' && computerSelection === 'paper')
     ) {
-        // Player wins
         return `You Win! ${playerSelection} beats ${computerSelection}`;
     } else {
-        // Computer wins
         return `You Lose! ${computerSelection} beats ${playerSelection}`;
     }
 }
@@ -39,9 +36,6 @@ function game() {
         // Get player and computer selections
         let playerSelection = prompt("Enter your choice (rock, paper, or scissors):").toLowerCase();
         let computerSelection = getComputerChoice();
-
-        // console.log(`Player chooses: ${playerSelection}`);
-        // console.log(`Computer chooses: ${computerSelection}`);
 
         // Play the round and update scores
         let result = playRound(playerSelection, computerSelection);
@@ -61,7 +55,6 @@ function game() {
         console.log(`Score - Player: ${playerScore}, Computer: ${computerScore}\n`);
     }
 
-    // Determine the overall winner
     if (playerScore > computerScore) {
         console.log("Congratulations! You win the game!");
     } else if (playerScore < computerScore) {
@@ -71,5 +64,4 @@ function game() {
     }
 }
 
-// Call the game function to start playing
 game();
